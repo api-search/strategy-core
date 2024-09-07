@@ -9,6 +9,8 @@
     - Communication    
     - Discovery     
     - Onboarding 
+  policies:
+    - contract-metadata
 
 - name: APIs Possess Informative Metadata
   type: API
@@ -19,14 +21,170 @@
     - Communication    
     - Discovery     
     - Onboarding 
+  policies:
+    - api-metadata
+    - openapi-info-title
+    - openapi-info-description
+    - openapi-info-contact
+    - openapi-info-license
+    - openapi-info-terms-of-service
+    - openapi-info-version    
+    - openapi-openapi-tags
 
-- name: APIs MUST Have One Click Access
+- name: APIs Have One Click Access
   type: API
   scope: Business Contract
   description: All APIs possess a URL for humans to follow to engage, and the base path URL for machines to use when calling API.
   solutions:    
     - Onboarding 
     - Access    
+  policies:
+    - human-url
+    - base-url
+
+- name: API Paths Must Conform to the Organization
+  type: API
+  scope: Business Contract
+  description: All API paths must conform to the overall organization and domain standards, utilizing plain language and a resource approach to delivering digital resources and capabilities via HTTP APIs, providing a common set of paths for all types of consumers.
+  solutions:     
+    - Access
+    - Alignment
+    - Automation    
+    - Change
+    - Communication
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Self-Service  
+    - Simplicity 
+  policies:
+    - openapi-path-name   
+
+- name: API Operations Must Be Useful and Consistent
+  type: API
+  scope: Business Contract
+  description: All API operations must be useful and follow consistent Internet, industry, and enterprise standards, providing a simple and relevant HTTP API operation that does one thing and does it well, making the value intuitive to API consumers who are using.
+  solutions:     
+    - Access
+    - Automation    
+    - Communication
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Quality
+    - Reliability
+    - Security
+    - Self-Service  
+    - Simplicity
+  policies:
+    - openapi-operation-summary
+    - openapi-operation-description
+    - openapi-operation-identifiers
+    - openapi-operation-tags
+    - openapi-operation-security   
+    - openapi-operation-request-bodies 
+    - openapi-operation-request-bodies-meda-types
+    - openapi-operation-request-bodies-schema
+    - openapi-operation-parameter-in
+    - openapi-operation-parameter-names
+    - openapi-operation-parameter-descriptions
+    - openapi-operation-parameter-types
+    - openapi-operation-parameter-schema
+
+- name: API Responses Must Be Meaningful and Consistent
+  type: API
+  scope: Business Contract
+  description: All API responses should follow Internet, industry, and enterprise standards, providing meaningful and consistent communication and structure, always providing what was intended for API consumers, while ensuring things are as simple as possible.
+  solutions:     
+    - Access
+    - Automation    
+    - Communication
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Quality
+    - Reliability
+    - Security
+    - Self-Service  
+    - Simplicity
+  policies:
+    - openapi-operation-response-2xx
+    - openapi-operation-response-2xx-media-types
+    - openapi-operation-response-2xx-schema
+    - openapi-operation-response-2xx-examples
+    - openapi-operation-response-4xx
+    - openapi-operation-response-4xx-media-types
+    - openapi-operation-response-4xx-schema
+    - openapi-operation-response-4xx-examples
+    - openapi-operation-response-5xx
+    - openapi-operation-response-5xx-media-types
+    - openapi-operation-response-5xx-schema
+    - openapi-operation-response-5xx-examples
+
+- name: API Data Should Be Well-Defined and Validated
+  type: API
+  scope: Business Contract
+  description: The schema for data that is sent and received via API should always be well-defined, possess a well-known shape, and always be validated, ensuring that digital resources and capabilities are what they should be, and only accessible to those who should have access.
+  solutions:     
+    - Access
+    - Automation    
+    - Communication
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Quality
+    - Reliability
+    - Security
+    - Self-Service  
+    - Simplicity
+  policies:
+    - openapi-schema-type
+    - openapi-schema-names
+    - openapi-schema-descriptions
+    - openapi-schema-property-names
+    - openapi-schema-property-descriptions
+    - openapi-schema-property-types
+    - openapi-schema-property-enums
+    - openapi-schema-property-required
+    - openapi-schema-property-shapes
+
+- name: APIs Must Always Be Secure
+  type: API
+  scope: Business Contract
+  description: All APIs should be properly secured during design, develop, and run-time, making sure data, credentials, logs, and all other related resources are properly secured and operating as expected by both the API producer and the consumer.
+  solutions:     
+    - Access
+    - Automation    
+    - Communication
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Quality
+    - Reliability
+    - Security
+    - Self-Service  
+    - Simplicity
+  policies:
+    - openapi-security    
+
+- name: APIs Must Reusable Whenever Possible
+  type: API
+  scope: Business Contract
+  description: The components of any API should be made modular and reusable whenever it makes sense to the business use case, keeping schema, parameters, examples, error responses, and other common parts of an API as reusable and interchangeable as possible.
+  solutions:     
+    - Access
+    - Automation    
+    - Communication
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Quality
+    - Reliability
+    - Security
+    - Self-Service  
+    - Simplicity
+  policies:
+    - openapi-components     
 
 - name: Producing APIs MUST Be Repeatable
   type: API
@@ -39,43 +197,8 @@
     - Discovery     
     - Quality               
     - Reliability 
-
-- name: APIs Are Always Documented
-  type: API
-  scope: Business Contract
-  description: All APIs must have human-readable documentation that defines the technical surface area of each API being made available to API consumers.
-  solutions:    
-    - Alignment
-    - Communication
-    - Onboarding
-    - Discovery
-    - Simplicity
-    - Consistency  
-
-- name: APIs are Defined by Technical Contracts
-  type: API
-  scope: Technical Contract
-  description: All APIs must have machine-readable artifacts that defines the technical surface area of each API being made available to API consumers.
-  solutions:    
-    - Access
-    - Automation    
-    - Change
-    - Consistency
-    - Discovery
-    - Onboarding
-    - Self-Service        
-
-- name: Change is Manged for API Contracts
-  type: API
-  scope: Business Contract
-  description: All API contracts must have change management baked into the definition, delivery, and iteration of all APIs represented, ensuring that producers and consumers are in alignment regarding the communication, quality, and velocity of change.
-  solutions:     
-    - Alignment  
-    - Change
-    - Communication
-    - Consistency
-    - Quality
-    - Reliability
+  policies:
+    - github-repository
 
 - name: APIs Are Always Aligned with Business
   type: API
@@ -88,7 +211,54 @@
     - Consistency
     - Discovery
     - Onboarding
-    - Simplicity   
+    - Simplicity 
+  policies:
+    - use-cases 
+
+- name: APIs Are Always Documented
+  type: API
+  scope: Business Contract
+  description: All APIs must have human-readable documentation that defines the technical surface area of each API being made available to API consumers.
+  solutions:    
+    - Alignment
+    - Communication
+    - Onboarding
+    - Discovery
+    - Simplicity
+    - Consistency 
+  policies:
+    - documentation
+
+- name: APIs are Defined by Technical Contracts
+  type: API
+  scope: Technical Contract
+  description: All APIs must have machine-readable artifacts that defines the technical surface area of each API being made available to API consumers.
+  solutions:    
+    - Access
+    - Automation    
+    - Change
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Self-Service 
+  policies:
+    - openapi
+    - postman-collection    
+
+- name: Change is Manged for APIs
+  type: API
+  scope: Business Contract
+  description: All APIs must have change management baked into the definition, delivery, and iteration, ensuring that producers and consumers are in alignment regarding the communication, quality, and velocity of change.
+  solutions:     
+    - Alignment  
+    - Change
+    - Communication
+    - Consistency
+    - Quality
+    - Reliability 
+  policies:
+    - road-map 
+    - change-log
 
 - name: APIs Are High Quality and Reliable
   type: API
@@ -98,7 +268,10 @@
     - Automation    
     - Communication
     - Quality
-    - Reliability     
+    - Reliability  
+  policies:
+    - status 
+    - performance
 
 - name: APIs Operations Have Dedicated Workspaces
   type: API
@@ -110,9 +283,12 @@
     - Communication
     - Discovery
     - Onboarding
-    - Self-Service  
+    - Self-Service 
+  policies:
+    - github-organization
+    - postman-workspace
 
-- name: Onboarding is Made is Easy for API Options
+- name: Onboarding is Made is Easy for API Operations
   type: API
   scope: Business Contract
   description: API operations is made easier by prioritizing and making common elements like documentation, authentication, SDKs easy to find and available as just a couple of simple steps that API consumers can follow when it comes to onboarding with an API.
@@ -122,7 +298,133 @@
     - Discovery
     - Onboarding
     - Self-Service  
-    - Simplicity       
+    - Simplicity  
+  policies:
+    - portals
+    - getting-started 
+    - plans
+    - sdks
 
+- name: API Change is Relative to Operational Change
+  type: API
+  scope: Business Contract
+  description: Individual APIs should be associated with overall operational change, providing a common operational change log and road-map that is higher level than change for each individual API, but provides a common context across all APis.
+  solutions:     
+    - Alignment  
+    - Change
+    - Communication
+    - Consistency
+    - Quality
+    - Reliability  
+  policies:
+    - road-map 
+    - change-log        
 
-    
+- name: APIs Work Across Multiple Programming Languages
+  type: API
+  scope: Business Contract
+  description: All APIs should have SDK and client code available in multiple programming languages used by targeted API consumers for known business use cases, making it as simple as possible for consumers to put an API to use in their own language and frameworks.
+  solutions:     
+    - Alignment
+    - Automation    
+    - Change
+    - Consistency
+    - Onboarding
+    - Self-Service 
+  policies:
+    - sdks
+
+- name: APIs Are Part of Regular Active Communication
+  type: API
+  scope: Business Contract
+  description: All APIs are considered and included when relevant as part of regular internal and external communication channels, sharing road maps, change logs, blog posts, videos, and other relevant information that producers and consumers will find useful.
+  solutions:     
+    - Alignment  
+    - Change
+    - Communication
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Self-Service
+  policies:
+    - blogs
+    - blog-feeds
+    - videos    
+
+- name: APIs Must Be Supported and Have Feedback Loops
+  type: API
+  scope: Business Contract
+  description: All APIs must have support mechanisms to ensure API consumers have self-service or direct support channels, as well as regular feedback loops for soliciting feedback from consumers beyond the problems they have encountered.
+  solutions:     
+    - Alignment 
+    - Change
+    - Communication
+    - Consistency
+    - Discovery
+    - Quality
+    - Reliability  
+    - Simplicity 
+  policies:
+    - support 
+    - feedback       
+
+- name: APIs Must Be Governed
+  type: API
+  scope: Business Contract
+  description: All APIs being produced must be governed as part of the overall strategy, using the platform, as well as a common lifecycle, applying policies and rules, and keeping teams moving in the same direction using guidance.
+  solutions:     
+    - Access
+    - Alignment
+    - Automation    
+    - Change
+    - Communication
+    - Consistency
+    - Discovery
+    - Legal
+    - Onboarding
+    - Quality
+    - Reliability
+    - Security
+    - Self-Service  
+    - Simplicity 
+  policies:
+    - governance         
+
+- name: APIs Must Be Covered Legally
+  type: API
+  scope: Business Contract
+  description: All APIs must be reviewed by legal council and posses terms of service,  privacy policy, licensing, and other regulatory and compliance requirements, making sure all the legal bases are covered before any API is made available to consumers.
+  solutions:     
+    - Access
+    - Alignment 
+    - Communication
+    - Consistency
+    - Legal
+    - Onboarding
+    - Quality  
+  policies:
+    - terms-of-service
+    - privacy
+    - licensing     
+
+- name: APIs Must Use Industry Standards
+  type: API
+  scope: Business Contract
+  description: All APIs must be using relevant Internet, industry, and government standards available, ensuring to properly research areas of operations to see what existing standards may exist before the creation of any new schema, process, or other element exists.
+  solutions:     
+    - Access
+    - Alignment
+    - Automation    
+    - Change
+    - Communication
+    - Consistency
+    - Discovery
+    - Legal
+    - Onboarding
+    - Quality
+    - Reliability
+    - Security
+    - Self-Service  
+    - Simplicity 
+  policies:
+    - standards        
