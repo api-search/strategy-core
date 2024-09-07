@@ -1,0 +1,128 @@
+
+- name: APIs are Defined as API Contracts
+  type: API
+  scope: Business Contract
+  description: All APIs are defined as API contracts, aligning the business and technology of delivering consistent high quality APIs.
+  solutions:
+    - Alignment
+    - Contracts
+    - Communication    
+    - Discovery     
+    - Onboarding 
+
+- name: APIs Possess Informative Metadata
+  type: API
+  scope: Business Contract
+  description: All APIs possess metadata that is relevant to what APIs do, but also how they can be used in business by API consumers.
+  solutions:
+    - Alignment
+    - Communication    
+    - Discovery     
+    - Onboarding 
+
+- name: APIs MUST Have One Click Access
+  type: API
+  scope: Business Contract
+  description: All APIs possess a URL for humans to follow to engage, and the base path URL for machines to use when calling API.
+  solutions:    
+    - Onboarding 
+    - Access    
+
+- name: Producing APIs MUST Be Repeatable
+  type: API
+  scope: Business Contract
+  description: All APIs must have a single source of truth for all artifacts and conversations and able to be delivered using a repeatable process.
+  solutions:    
+    - Change 
+    - Consistency  
+    - Communication
+    - Discovery     
+    - Quality               
+    - Reliability 
+
+- name: APIs Are Always Documented
+  type: API
+  scope: Business Contract
+  description: All APIs must have human-readable documentation that defines the technical surface area of each API being made available to API consumers.
+  solutions:    
+    - Alignment
+    - Communication
+    - Onboarding
+    - Discovery
+    - Simplicity
+    - Consistency  
+
+- name: APIs are Defined by Technical Contracts
+  type: API
+  scope: Technical Contract
+  description: All APIs must have machine-readable artifacts that defines the technical surface area of each API being made available to API consumers.
+  solutions:    
+    - Access
+    - Automation    
+    - Change
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Self-Service        
+
+- name: Change is Manged for API Contracts
+  type: API
+  scope: Business Contract
+  description: All API contracts must have change management baked into the definition, delivery, and iteration of all APIs represented, ensuring that producers and consumers are in alignment regarding the communication, quality, and velocity of change.
+  solutions:     
+    - Alignment  
+    - Change
+    - Communication
+    - Consistency
+    - Quality
+    - Reliability
+
+- name: APIs Are Always Aligned with Business
+  type: API
+  scope: Business Contract
+  description: All API contracts must have use cases that align the business reasons why an API is being delivered to consumers with the actual technical details of each API contract, ensuring that operations all have a valid business use case.
+  solutions:     
+    - Alignment 
+    - Change
+    - Communication
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Simplicity   
+
+- name: APIs Are High Quality and Reliable
+  type: API
+  scope: Business Contract
+  description: All API should be high quality and reliable, providing adequate levels of monitoring of its availability and performance, with the proper provenance and communication with producer and consumers regarding quality.
+  solutions:     
+    - Automation    
+    - Communication
+    - Quality
+    - Reliability     
+
+- name: APIs Operations Have Dedicated Workspaces
+  type: API
+  scope: Business Contract
+  description: API operations should provide dedicated workspace to domains, lines of business, and teams who are producing APIs, providing locations where work, collaboration, and automation can occur around APis.
+  solutions:     
+    - Access
+    - Automation    
+    - Communication
+    - Discovery
+    - Onboarding
+    - Self-Service  
+
+- name: Onboarding is Made is Easy for API Options
+  type: API
+  scope: Business Contract
+  description: API operations is made easier by prioritizing and making common elements like documentation, authentication, SDKs easy to find and available as just a couple of simple steps that API consumers can follow when it comes to onboarding with an API.
+  solutions:     
+    - Communication
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Self-Service  
+    - Simplicity       
+
+
+    
