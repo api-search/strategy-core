@@ -2,8 +2,7 @@
   type: API
   scope: Contract
   description: >-
-    All APIs are defined as API contracts, aligning the business and technology
-    of delivering consistent high quality APIs.
+    All APIs are defined as API contracts so that we can align both the business and technology of delivering consistent high quality APIs, employing source control to manage the technical, but also the business side of things, while actively checking in on the alignment between the two over time.
   solutions:
     - Alignment
     - Contracts
@@ -16,8 +15,7 @@
   type: API
   scope: API
   description: >-
-    All APIs possess metadata that is relevant to what APIs do, but also how
-    they can be used in business by API consumers.
+    All APIs possess metadata that is relevant to what APIs do, but also how they can be used in business by API consumers, and metadata helps ensure that the front door for API operations within this domain is always one click away, and present in all artifacts we use to support API operations.
   solutions:
     - Alignment
     - Communication
@@ -29,22 +27,19 @@
   type: API
   scope: API
   description: >-
-    All APIs possess a URL for humans to follow to engage, and the base path URL
-    for machines to use when calling API.
+    All APIs possess a URL for humans to follow when engaging as well as the base path URL for machines to use when calling each API, ensuring that the front door for API operations within this domain is always one click away, and present in all artifacts supporting humans and the applications.
   solutions:
     - Onboarding
     - Access
   policies:
+    - apis-json-url-info
     - human-url
     - base-url
 - name: API Paths Must Conform to the Organization
   type: API
   scope: OpenAPI
   description: >-
-    All API paths must conform to the overall organization and domain standards,
-    utilizing plain language and a resource approach to delivering digital
-    resources and capabilities via HTTP APIs, providing a common set of paths
-    for all types of consumers.
+    All API paths must conform to the overall organizational domain standards, utilizing plain language and a resourceful approach to delivering digital resources and capabilities via HTTP APIs, providing a common set of paths that can be used and reused across many different applications and consumers.
   solutions:
     - Access
     - Alignment
@@ -62,10 +57,7 @@
   type: API
   scope: OpenAPI
   description: >-
-    All API operations must be useful and follow consistent Internet, industry,
-    and enterprise standards, providing a simple and relevant HTTP API operation
-    that does one thing and does it well, making the value intuitive to API
-    consumers who are using.
+    All individual API operations must be useful and follow consistent Internet, industry, and enterprise standards, providing a simple and relevant HTTP API operation that does one thing and does it well, making the value intuitive to API consumers who will be using each API operation.
   solutions:
     - Access
     - Automation
@@ -98,10 +90,7 @@
   type: API
   scope: OpenAPI
   description: >-
-    All API responses should follow Internet, industry, and enterprise
-    standards, providing meaningful and consistent communication and structure,
-    always providing what was intended for API consumers, while ensuring things
-    are as simple as possible.
+    All API responses should follow Internet, industry, and enterprise standards, providing a meaningful and consistent communication and structure, always providing what was intended for API consumers, while ensuring things are always as simple as possible--always reducing the cognitive load.
   solutions:
     - Access
     - Automation
@@ -131,10 +120,7 @@
   type: API
   scope: OpenAPI
   description: >-
-    The schema for data that is sent and received via API should always be
-    well-defined, possess a well-known shape, and always be validated, ensuring
-    that digital resources and capabilities are what they should be, and only
-    accessible to those who should have access.
+    The schema for data that is sent and received via API should always be well-defined, possess a well-known shape, and always be validated, ensuring that digital resources and capabilities are what they should be, and only accessible to those who should have access our API digital resources.
   solutions:
     - Access
     - Automation
@@ -161,10 +147,7 @@
   type: API
   scope: OpenAPI
   description: >-
-    Individual API operations should be properly secured during design, develop, and run-time,
-    making sure data, credentials, logs, and all other related resources are
-    properly secured and operating as expected by both the API producer and the
-    consumer.
+    Individual API operations should always be properly secured during design, develop, and run-time, making sure data, credentials, logs, and all other related resources are properly secured and operating as expected by both the API producer and the consumer--protecting both parties equally.
   solutions:
     - Access
     - Automation
@@ -183,10 +166,7 @@
   type: API
   scope: OpenAPI
   description: >-
-    The components of any API should be made modular and reusable whenever it
-    makes sense to the business use case, keeping schema, parameters, examples,
-    error responses, and other common parts of an API as reusable and
-    interchangeable as possible.
+    The components of any API should be made modular and reusable whenever it makes sense to the business use case, keeping schema, parameters, examples, error responses, and other common parts of an API as reusable and interchangeable as possible within a single API, but also across all APIs.
   solutions:
     - Access
     - Automation
@@ -205,8 +185,7 @@
   type: API
   scope: API
   description: >-
-    All APIs must have machine-readable artifacts that defines the technical
-    surface area of each API being made available to API consumers.
+    All APIs must have machine-readable artifacts that defines the technical surface area of each API being made available to API consumers, utilizing open-source community specifications like OpenAPI and JSON Schema to define the technical details of each API that is being made available.
   solutions:
     - Access
     - Automation
@@ -218,12 +197,11 @@
   policies:
     - openapi
     - postman-collection
-- name: APIs Are Always Documented
+- name: APIs Are Always Well Documented
   type: API
   scope: API
   description: >-
-    All APIs must have human-readable documentation that defines the technical
-    surface area of each API being made available to API consumers.
+    All APIs must have human-readable documentation that defines the technical surface area of each API being made available to API consumers, providing a simple, intuitive, and ideally interactive HTML representation of APIs, methods, operations, requests, responses, errors, and other elements.
   solutions:
     - Alignment
     - Communication
@@ -237,8 +215,7 @@
   type: API
   scope: API
   description: >-
-    All APIs must have a single source of truth for all artifacts and
-    conversations and able to be delivered using a repeatable process.
+    All APIs must have a single source of truth for all artifacts, as well as the conversations and always be able to be delivered using a repeatable process, leveraging existing software development infrastructure to ensure for continuous integration and delivery consistently across all APIs.
   solutions:
     - Change
     - Consistency
@@ -248,14 +225,12 @@
     - Reliability
   policies:
     - github-repository
+    - source-of-truth-actions
 - name: APIs Are Always Aligned with Business
   type: API
   scope: API
   description: >-
-    All API contracts must have use cases that align the business reasons why an
-    API is being delivered to consumers with the actual technical details of
-    each API contract, ensuring that operations all have a valid business use
-    case.
+    All API contracts must have use cases that align the business reasons why an API is being delivered to consumers with the actual technical details of each API contract, ensuring that operations all have a valid business use case.
   solutions:
     - Alignment
     - Change
@@ -266,203 +241,11 @@
     - Simplicity
   policies:
     - use-cases    
-- name: Change is Managed for APIs
-  type: API
-  scope: API
-  description: >-
-    All APIs must have change management baked into the definition, delivery,
-    and iteration, ensuring that producers and consumers are in alignment
-    regarding the communication, quality, and velocity of change.
-  solutions:
-    - Alignment
-    - Change
-    - Communication
-    - Consistency
-    - Quality
-    - Reliability
-  policies:
-    - road-map
-    - change-log
-- name: APIs Are High Quality and Reliable
-  type: API
-  scope: API
-  description: >-
-    All API should be high quality and reliable, providing adequate levels of
-    monitoring of its availability and performance, with the proper provenance
-    and communication with producer and consumers regarding quality.
-  solutions:
-    - Automation
-    - Communication
-    - Quality
-    - Reliability
-  policies:
-    - status
-    - performance
-- name: APIs Operations Have Dedicated Workspaces
+- name: APIs Are Aligned with Industry Using Standards
   type: API
   scope: Common
   description: >-
-    API operations should provide dedicated workspace to domains, lines of
-    business, and teams who are producing APIs, providing locations where work,
-    collaboration, and automation can occur around APis.
-  solutions:
-    - Access
-    - Automation
-    - Communication
-    - Discovery
-    - Onboarding
-    - Self-Service
-  policies:
-    - github-organization
-    - postman-workspace
-- name: Onboarding is Made is Easy for API Operations
-  type: API
-  scope: Common
-  description: >-
-    API operations is made easier by prioritizing and making common elements
-    like documentation, authentication, SDKs easy to find and available as just
-    a couple of simple steps that API consumers can follow when it comes to
-    onboarding with an API.
-  solutions:
-    - Communication
-    - Consistency
-    - Discovery
-    - Onboarding
-    - Self-Service
-    - Simplicity
-  policies:
-    - portals
-    - getting-started
-    - plans
-    - sdks
-- name: API Change is Relative to Operational Change
-  type: API
-  scope: Common
-  description: >-
-    Individual APIs should be associated with overall operational change,
-    providing a common operational change log and road-map that is higher level
-    than change for each individual API, but provides a common context across
-    all APis.
-  solutions:
-    - Alignment
-    - Change
-    - Communication
-    - Consistency
-    - Quality
-    - Reliability
-  policies:
-    - road-map
-    - change-log
-- name: APIs Work Across Multiple Programming Languages
-  type: API
-  scope: Common
-  description: >-
-    All APIs should have SDK and client code available in multiple programming
-    languages used by targeted API consumers for known business use cases,
-    making it as simple as possible for consumers to put an API to use in their
-    own language and frameworks.
-  solutions:
-    - Alignment
-    - Automation
-    - Change
-    - Consistency
-    - Onboarding
-    - Self-Service
-  policies:
-    - sdks
-- name: APIs Are Part of Regular Active Communication
-  type: API
-  scope: Common
-  description: >-
-    All APIs are considered and included when relevant as part of regular
-    internal and external communication channels, sharing road maps, change
-    logs, blog posts, videos, and other relevant information that producers and
-    consumers will find useful.
-  solutions:
-    - Alignment
-    - Change
-    - Communication
-    - Consistency
-    - Discovery
-    - Onboarding
-    - Self-Service
-  policies:
-    - blogs
-    - blog-feeds
-    - videos
-- name: APIs Must Be Supported and Have Feedback Loops
-  type: API
-  scope: Common
-  description: >-
-    All APIs must have support mechanisms to ensure API consumers have
-    self-service or direct support channels, as well as regular feedback loops
-    for soliciting feedback from consumers beyond the problems they have
-    encountered.
-  solutions:
-    - Alignment
-    - Change
-    - Communication
-    - Consistency
-    - Discovery
-    - Quality
-    - Reliability
-    - Simplicity
-  policies:
-    - support
-    - feedback
-    - questions
-- name: APIs Must Be Governed
-  type: API
-  scope: Common
-  description: >-
-    All APIs being produced must be governed as part of the overall strategy,
-    using the platform, as well as a common lifecycle, applying policies and
-    rules, and keeping teams moving in the same direction using guidance.
-  solutions:
-    - Access
-    - Alignment
-    - Automation
-    - Change
-    - Communication
-    - Consistency
-    - Discovery
-    - Legal
-    - Onboarding
-    - Quality
-    - Reliability
-    - Security
-    - Self-Service
-    - Simplicity
-  policies:
-    - governance
-- name: APIs Are Legally Covered
-  type: API
-  scope: Common
-  description: >-
-    All APIs must be reviewed by legal council and posses terms of service, 
-    privacy policy, licensing, and other regulatory and compliance requirements,
-    making sure all the legal bases are covered before any API is made available
-    to consumers.
-  solutions:
-    - Access
-    - Alignment
-    - Communication
-    - Consistency
-    - Legal
-    - Onboarding
-    - Quality
-  policies:
-    - terms-of-service
-    - privacy-policy
-    - licensing
-- name: APIs Must Use Industry Standards
-  type: API
-  scope: Common
-  description: >-
-    All APIs must be using relevant Internet, industry, and government standards
-    available, ensuring to properly research areas of operations to see what
-    existing standards may exist before the creation of any new schema, process,
-    or other element exists.
+    All APIs must be using relevant Internet, industry, and government standards available, ensuring to properly research areas of operations to see what existing standards may exist before the creation of any new schema or process, helping align operations with the wider industry API landscape.
   solutions:
     - Access
     - Alignment
@@ -480,3 +263,187 @@
     - Simplicity
   policies:
     - standards
+- name: Change is Actively Managed for Each API
+  type: API
+  scope: API
+  description: >-
+    All APIs must have change management baked into the definition, delivery, and iteration, ensuring that producers and consumers are in alignment regarding the communication, quality, and velocity of change that is occurring for each individual API, driving planning as well as API provenance.
+  solutions:
+    - Alignment
+    - Change
+    - Communication
+    - Consistency
+    - Quality
+    - Reliability
+  policies:
+    - road-map
+    - change-log
+- name: APIs Are Always High Quality and Reliable
+  type: API
+  scope: API
+  description: >-
+    All APIs should be high quality and reliable, providing adequate levels of monitoring of its availability and performance, with the proper provenance and communication with producer and consumers regarding quality of the APIs, as well as with any future release of API resources.
+  solutions:
+    - Automation
+    - Communication
+    - Quality
+    - Reliability
+  policies:
+    - status
+    - performance
+- name: APIs Always Have Well-Defined Owners and Stakeholders
+  type: API
+  scope: API
+  description: >-
+    Each API should ideally have a dedicated product as well as an engineering owner, with other stakeholders across the API lifecycle defined in an easy to access human readable location, but also defined in a machine-readable API to help automate coordination amongst owners and stakeholders.
+  solutions:
+    - Alignment
+    - Automation
+    - Change
+    - Communication
+    - Consistency
+    - Onboarding
+    - Quality
+    - Reliability
+    - Security
+    - Self-Service
+  policies:
+    - teams        
+- name: APIs Operations Possess Dedicated Workspaces
+  type: API
+  scope: Common
+  description: >-
+    API operations should provide dedicated workspace for domains, lines of business, and teams who are producing APIs, providing a dedicated location where work, collaboration, and automation can occur around APIs establishing the virtual factory floor that exist across enterprise API operations.
+  solutions:
+    - Access
+    - Automation
+    - Communication
+    - Discovery
+    - Onboarding
+    - Self-Service
+  policies:
+    - github-organization
+    - postman-workspace
+- name: Onboarding is Always as Easy as Possible
+  type: API
+  scope: Common
+  description: >-
+    API operations is made easier by making common elements like documentation, authentication, SDKs easy to find and available as just a couple of simple steps that API consumers can follow when it comes to onboarding with an API, helping producers simplify the onboarding for their consumers.
+  solutions:
+    - Communication
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Self-Service
+    - Simplicity
+  policies:
+    - portals
+    - getting-started
+    - plans
+    - sdks
+- name: API Change is Relative to Operational Change
+  type: API
+  scope: Common
+  description: >-
+    Individual APIs should be aligned with overall operational change, providing a common operational change log and road-map that is higher level than change for each individual API, but provides a common context across all APIs, teams, and lines of business--keeping everyone in alignment.
+  solutions:
+    - Alignment
+    - Change
+    - Communication
+    - Consistency
+    - Quality
+    - Reliability
+  policies:
+    - apis-json-created-info
+    - apis-json-modified-info
+    - road-map
+    - change-log
+- name: APIs Work Across Multiple Programming Languages
+  type: API
+  scope: Common
+  description: >-
+    All APIs should have SDK and other client or server code available in multiple programming languages used by targeted API consumers for known business use cases, making it as simple as possible for consumers to put an API to use in their own language and frameworks, via their own infrastructure.
+  solutions:
+    - Alignment
+    - Automation
+    - Change
+    - Consistency
+    - Onboarding
+    - Self-Service
+  policies:
+    - sdks
+- name: APIs Are Legally Covered
+  type: API
+  scope: Common
+  description: >-
+    All APIs must be reviewed by legal council and posses terms of service,  privacy policy, licensing, and other regulatory and compliance requirements, making sure all the legal bases are covered before any API is made available to any external consumers of digital resources.
+  solutions:
+    - Access
+    - Alignment
+    - Communication
+    - Consistency
+    - Legal
+    - Onboarding
+    - Quality
+  policies:
+    - terms-of-service
+    - privacy-policy
+    - licensing  
+- name: APIs Must Be Actively Governed
+  type: API
+  scope: Common
+  description: >-
+    All APIs being produced must be governed as part of the overall strategy, using the platform, as well as a common API lifecycle, applying policies and rules, and keeping teams moving in the same direction using guidance, and speaking the same language with a common API vocabulary.
+  solutions:
+    - Access
+    - Alignment
+    - Automation
+    - Change
+    - Communication
+    - Consistency
+    - Discovery
+    - Legal
+    - Onboarding
+    - Quality
+    - Reliability
+    - Security
+    - Self-Service
+    - Simplicity
+  policies:
+    - governance
+- name: APIs Are Part of Regular Active Communication
+  type: API
+  scope: Common
+  description: >-
+    All APIs are considered and included as part of regular internal and external communication channels, sharing road maps, change logs, blog posts, videos, and other relevant information that producers and consumers will find useful around their regular technical or business applications.
+  solutions:
+    - Alignment
+    - Change
+    - Communication
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Self-Service
+  policies:
+    - blogs
+    - blog-feeds
+    - videos
+- name: APIs Must Be Supported and Have Feedback Loops
+  type: API
+  scope: Common
+  description: >-
+    All APIs must have support mechanisms to ensure API consumers have self-service or direct support channels, as well as regular feedback loops for soliciting feedback or answering specific API questions from consumers, going beyond the problems consumers may have encountered using APIs.
+  solutions:
+    - Alignment
+    - Change
+    - Communication
+    - Consistency
+    - Discovery
+    - Quality
+    - Reliability
+    - Simplicity
+  policies:
+    - support
+    - feedback
+    - questions
+
