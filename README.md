@@ -1,4 +1,7 @@
-## APIs are Defined as API Contracts
+# APIs.io Governance Strategy
+These are all of the strategy entries used to govern the APIs that power the APIs.io search engine .
+
+## APIs are Defined as API Contracts (apis-are-defined-as-api-contracts)
 All APIs are defined as API contracts so that we can align both the business and technology of delivering consistent high quality APIs, employing source control to manage the technical, but also the business side of things, while actively checking in on the alignment between the two over time.
 
 ```
@@ -19,7 +22,7 @@ solutions:
 policies:
   - contract-metadata
 ```
-## APIs Possess Informative Metadata
+## APIs Possess Informative Metadata (apis-possess-informative-metadata)
 All APIs possess metadata that is relevant to what APIs do, but also how they can be used in business by API consumers, and metadata helps ensure that the front door for API operations within this domain is always one click away, and present in all artifacts we use to support API operations.
 
 ```
@@ -39,7 +42,7 @@ solutions:
 policies:
   - api-metadata
 ```
-## APIs Have One Click Access
+## APIs Have One Click Access (apis-have-one-click-access)
 All APIs possess a URL for humans to follow when engaging as well as the base path URL for machines to use when calling each API, ensuring that the front door for API operations within this domain is always one click away, and present in all artifacts supporting humans and the applications.
 
 ```
@@ -55,10 +58,11 @@ solutions:
   - Onboarding
   - Access
 policies:
+  - apis-json-url-info
   - human-url
   - base-url
 ```
-## API Paths Must Conform to the Organization
+## API Paths Must Conform to the Organization (api-paths-must-conform-to-the-organization)
 All API paths must conform to the overall organizational domain standards, utilizing plain language and a resourceful approach to delivering digital resources and capabilities via HTTP APIs, providing a common set of paths that can be used and reused across many different applications and consumers.
 
 ```
@@ -84,7 +88,7 @@ solutions:
 policies:
   - openapi-path-names
 ```
-## API Operations Must Be Useful and Consistent
+## API Operations Must Be Useful and Consistent (api-operations-must-be-useful-and-consistent)
 All individual API operations must be useful and follow consistent Internet, industry, and enterprise standards, providing a simple and relevant HTTP API operation that does one thing and does it well, making the value intuitive to API consumers who will be using each API operation.
 
 ```
@@ -125,7 +129,7 @@ policies:
   - openapi-operation-tags
   - openapi-operation-security
 ```
-## API Responses Must Be Meaningful and Consistent
+## API Responses Must Be Meaningful and Consistent (api-responses-must-be-meaningful-and-consistent)
 All API responses should follow Internet, industry, and enterprise standards, providing a meaningful and consistent communication and structure, always providing what was intended for API consumers, while ensuring things are always as simple as possible--always reducing the cognitive load.
 
 ```
@@ -163,7 +167,7 @@ policies:
   - openapi-operation-response-5xx-schema
   - openapi-operation-response-5xx-examples
 ```
-## API Data Should Be Well-Defined and Validated
+## API Data Should Be Well-Defined and Validated (api-data-should-be-well-defined-and-validated)
 The schema for data that is sent and received via API should always be well-defined, possess a well-known shape, and always be validated, ensuring that digital resources and capabilities are what they should be, and only accessible to those who should have access our API digital resources.
 
 ```
@@ -198,7 +202,7 @@ policies:
   - openapi-schema-property-required
   - openapi-schema-property-shapes
 ```
-## API Operations Must Always Be Secure
+## API Operations Must Always Be Secure (api-operations-must-always-be-secure)
 Individual API operations should always be properly secured during design, develop, and run-time, making sure data, credentials, logs, and all other related resources are properly secured and operating as expected by both the API producer and the consumer--protecting both parties equally.
 
 ```
@@ -225,7 +229,7 @@ solutions:
 policies:
   - openapi-security
 ```
-## APIs Must Reusable Whenever Possible
+## APIs Must Reusable Whenever Possible (apis-must-reusable-whenever-possible)
 The components of any API should be made modular and reusable whenever it makes sense to the business use case, keeping schema, parameters, examples, error responses, and other common parts of an API as reusable and interchangeable as possible within a single API, but also across all APIs.
 
 ```
@@ -252,7 +256,7 @@ solutions:
 policies:
   - openapi-components
 ```
-## APIs are Defined by Technical Contracts
+## APIs are Defined by Technical Contracts (apis-are-defined-by-technical-contracts)
 All APIs must have machine-readable artifacts that defines the technical surface area of each API being made available to API consumers, utilizing open-source community specifications like OpenAPI and JSON Schema to define the technical details of each API that is being made available.
 
 ```
@@ -276,7 +280,7 @@ policies:
   - openapi
   - postman-collection
 ```
-## APIs Are Always Well Documented
+## APIs Are Always Well Documented (apis-are-always-well-documented)
 All APIs must have human-readable documentation that defines the technical surface area of each API being made available to API consumers, providing a simple, intuitive, and ideally interactive HTML representation of APIs, methods, operations, requests, responses, errors, and other elements.
 
 ```
@@ -298,7 +302,7 @@ solutions:
 policies:
   - documentation
 ```
-## Producing APIs MUST Be Repeatable
+## Producing APIs MUST Be Repeatable (producing-apis-must-be-repeatable)
 All APIs must have a single source of truth for all artifacts, as well as the conversations and always be able to be delivered using a repeatable process, leveraging existing software development infrastructure to ensure for continuous integration and delivery consistently across all APIs.
 
 ```
@@ -321,7 +325,34 @@ policies:
   - github-repository
   - source-of-truth-actions
 ```
-## APIs Are Always Aligned with Business
+## APIs Are Made Available Through a Platform Gateway (apis-are-made-available-through-a-platform-gateway)
+All APIs must be deployed through a common platform gateway established for the domain, line of business, or team, leveraging development, staging, and production environments, and a common set of policies for configuring access to digital resources and capabilities via APis.
+
+```
+name: APIs Are Made Available Through a Platform Gateway
+type: API
+scope: API
+description: >-
+  All APIs must be deployed through a common platform gateway established for
+  the domain, line of business, or team, leveraging development, staging, and
+  production environments, and a common set of policies for configuring access
+  to digital resources and capabilities via APis.
+solutions:
+  - Access
+  - Automation
+  - Change
+  - Consistency
+  - Discovery
+  - Onboarding
+  - Quality
+  - Reliability
+  - Security
+  - Self-Service
+policies:
+  - gateway
+  - environments
+```
+## APIs Are Always Aligned with Business (apis-are-always-aligned-with-business)
 All API contracts must have use cases that align the business reasons why an API is being delivered to consumers with the actual technical details of each API contract, ensuring that operations all have a valid business use case.
 
 ```
@@ -343,77 +374,7 @@ solutions:
 policies:
   - use-cases
 ```
-## Change is Actively Managed for Each API
-All APIs must have change management baked into the definition, delivery, and iteration, ensuring that producers and consumers are in alignment regarding the communication, quality, and velocity of change that is occurring for each individual API, driving planning as well as API provenance.
-
-```
-name: Change is Actively Managed for Each API
-type: API
-scope: API
-description: >-
-  All APIs must have change management baked into the definition, delivery, and
-  iteration, ensuring that producers and consumers are in alignment regarding
-  the communication, quality, and velocity of change that is occurring for each
-  individual API, driving planning as well as API provenance.
-solutions:
-  - Alignment
-  - Change
-  - Communication
-  - Consistency
-  - Quality
-  - Reliability
-policies:
-  - road-map
-  - change-log
-```
-## APIs Are Always High Quality and Reliable
-All APIs should be high quality and reliable, providing adequate levels of monitoring of its availability and performance, with the proper provenance and communication with producer and consumers regarding quality of the APIs, as well as with any future release of API resources.
-
-```
-name: APIs Are Always High Quality and Reliable
-type: API
-scope: API
-description: >-
-  All APIs should be high quality and reliable, providing adequate levels of
-  monitoring of its availability and performance, with the proper provenance and
-  communication with producer and consumers regarding quality of the APIs, as
-  well as with any future release of API resources.
-solutions:
-  - Automation
-  - Communication
-  - Quality
-  - Reliability
-policies:
-  - status
-  - performance
-```
-## APIs Always Have Well-Defined Owners and Stakeholders
-Each API should ideally have a dedicated product as well as an engineering owner, with other stakeholders across the API lifecycle defined in an easy to access human readable location, but also defined in a machine-readable API to help automate coordination amongst owners and stakeholders.
-
-```
-name: APIs Always Have Well-Defined Owners and Stakeholders
-type: API
-scope: API
-description: >-
-  Each API should ideally have a dedicated product as well as an engineering
-  owner, with other stakeholders across the API lifecycle defined in an easy to
-  access human readable location, but also defined in a machine-readable API to
-  help automate coordination amongst owners and stakeholders.
-solutions:
-  - Alignment
-  - Automation
-  - Change
-  - Communication
-  - Consistency
-  - Onboarding
-  - Quality
-  - Reliability
-  - Security
-  - Self-Service
-policies:
-  - teams
-```
-## APIs Are Aligned with Industry Using Standards
+## APIs Are Aligned with Industry Using Standards (apis-are-aligned-with-industry-using-standards)
 All APIs must be using relevant Internet, industry, and government standards available, ensuring to properly research areas of operations to see what existing standards may exist before the creation of any new schema or process, helping align operations with the wider industry API landscape.
 
 ```
@@ -443,7 +404,77 @@ solutions:
 policies:
   - standards
 ```
-## APIs Operations Possess Dedicated Workspaces
+## Change is Actively Managed for Each API (change-is-actively-managed-for-each-api)
+All APIs must have change management baked into the definition, delivery, and iteration, ensuring that producers and consumers are in alignment regarding the communication, quality, and velocity of change that is occurring for each individual API, driving planning as well as API provenance.
+
+```
+name: Change is Actively Managed for Each API
+type: API
+scope: API
+description: >-
+  All APIs must have change management baked into the definition, delivery, and
+  iteration, ensuring that producers and consumers are in alignment regarding
+  the communication, quality, and velocity of change that is occurring for each
+  individual API, driving planning as well as API provenance.
+solutions:
+  - Alignment
+  - Change
+  - Communication
+  - Consistency
+  - Quality
+  - Reliability
+policies:
+  - road-map
+  - change-log
+```
+## APIs Are Always High Quality and Reliable (apis-are-always-high-quality-and-reliable)
+All APIs should be high quality and reliable, providing adequate levels of monitoring of its availability and performance, with the proper provenance and communication with producer and consumers regarding quality of the APIs, as well as with any future release of API resources.
+
+```
+name: APIs Are Always High Quality and Reliable
+type: API
+scope: API
+description: >-
+  All APIs should be high quality and reliable, providing adequate levels of
+  monitoring of its availability and performance, with the proper provenance and
+  communication with producer and consumers regarding quality of the APIs, as
+  well as with any future release of API resources.
+solutions:
+  - Automation
+  - Communication
+  - Quality
+  - Reliability
+policies:
+  - status
+  - performance
+```
+## APIs Always Have Well-Defined Owners and Stakeholders (apis-always-have-well-defined-owners-and-stakeholders)
+Each API should ideally have a dedicated product as well as an engineering owner, with other stakeholders across the API lifecycle defined in an easy to access human readable location, but also defined in a machine-readable API to help automate coordination amongst owners and stakeholders.
+
+```
+name: APIs Always Have Well-Defined Owners and Stakeholders
+type: API
+scope: API
+description: >-
+  Each API should ideally have a dedicated product as well as an engineering
+  owner, with other stakeholders across the API lifecycle defined in an easy to
+  access human readable location, but also defined in a machine-readable API to
+  help automate coordination amongst owners and stakeholders.
+solutions:
+  - Alignment
+  - Automation
+  - Change
+  - Communication
+  - Consistency
+  - Onboarding
+  - Quality
+  - Reliability
+  - Security
+  - Self-Service
+policies:
+  - teams
+```
+## APIs Operations Possess Dedicated Workspaces (apis-operations-possess-dedicated-workspaces)
 API operations should provide dedicated workspace for domains, lines of business, and teams who are producing APIs, providing a dedicated location where work, collaboration, and automation can occur around APIs establishing the virtual factory floor that exist across enterprise API operations.
 
 ```
@@ -466,7 +497,7 @@ policies:
   - github-organization
   - postman-workspace
 ```
-## Onboarding is Always as Easy as Possible
+## Onboarding is Always as Easy as Possible (onboarding-is-always-as-easy-as-possible)
 API operations is made easier by making common elements like documentation, authentication, SDKs easy to find and available as just a couple of simple steps that API consumers can follow when it comes to onboarding with an API, helping producers simplify the onboarding for their consumers.
 
 ```
@@ -491,7 +522,7 @@ policies:
   - plans
   - sdks
 ```
-## API Change is Relative to Operational Change
+## API Change is Relative to Operational Change (api-change-is-relative-to-operational-change)
 Individual APIs should be aligned with overall operational change, providing a common operational change log and road-map that is higher level than change for each individual API, but provides a common context across all APIs, teams, and lines of business--keeping everyone in alignment.
 
 ```
@@ -511,10 +542,13 @@ solutions:
   - Quality
   - Reliability
 policies:
+  - apis-json-created-info
+  - apis-json-modified-info
   - road-map
   - change-log
+  - versioning
 ```
-## APIs Work Across Multiple Programming Languages
+## APIs Work Across Multiple Programming Languages (apis-work-across-multiple-programming-languages)
 All APIs should have SDK and other client or server code available in multiple programming languages used by targeted API consumers for known business use cases, making it as simple as possible for consumers to put an API to use in their own language and frameworks, via their own infrastructure.
 
 ```
@@ -536,7 +570,7 @@ solutions:
 policies:
   - sdks
 ```
-## APIs Are Legally Covered
+## APIs Are Legally Covered (apis-are-legally-covered)
 All APIs must be reviewed by legal council and posses terms of service,  privacy policy, licensing, and other regulatory and compliance requirements, making sure all the legal bases are covered before any API is made available to any external consumers of digital resources.
 
 ```
@@ -561,7 +595,7 @@ policies:
   - privacy-policy
   - licensing
 ```
-## APIs Must Be Actively Governed
+## APIs Must Be Actively Governed (apis-must-be-actively-governed)
 All APIs being produced must be governed as part of the overall strategy, using the platform, as well as a common API lifecycle, applying policies and rules, and keeping teams moving in the same direction using guidance, and speaking the same language with a common API vocabulary.
 
 ```
@@ -591,7 +625,7 @@ solutions:
 policies:
   - governance
 ```
-## APIs Are Part of Regular Active Communication
+## APIs Are Part of Regular Active Communication (apis-are-part-of-regular-active-communication)
 All APIs are considered and included as part of regular internal and external communication channels, sharing road maps, change logs, blog posts, videos, and other relevant information that producers and consumers will find useful around their regular technical or business applications.
 
 ```
@@ -616,7 +650,7 @@ policies:
   - blog-feeds
   - videos
 ```
-## APIs Must Be Supported and Have Feedback Loops
+## APIs Must Be Supported and Have Feedback Loops (apis-must-be-supported-and-have-feedback-loops)
 All APIs must have support mechanisms to ensure API consumers have self-service or direct support channels, as well as regular feedback loops for soliciting feedback or answering specific API questions from consumers, going beyond the problems consumers may have encountered using APIs.
 
 ```
@@ -641,4 +675,27 @@ policies:
   - support
   - feedback
   - questions
+```
+## API Contracts Are Validated (api-contracts-are-validated)
+All APIs must have a link to the evidence of the contract validation for business and technical contracts, allowing any stakeholder to review the details of the contract, as well as the rules applied to govern the details of contracts.
+
+```
+name: API Contracts Are Validated
+type: API
+scope: Common
+description: >-
+  All APIs must have a link to the evidence of the contract validation for
+  business and technical contracts, allowing any stakeholder to review the
+  details of the contract, as well as the rules applied to govern the details of
+  contracts.
+solutions:
+  - Alignment
+  - Communication
+  - Consistency
+  - Quality
+  - Reliability
+  - Self-Service
+policies:
+  - business-contract-validator
+  - technical-contract-validator
 ```

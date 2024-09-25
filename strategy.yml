@@ -480,4 +480,5 @@
     - Reliability
     - Self-Service  
   policies:
-    - validator
+    - business-contract-validator
+    - technical-contract-validator
