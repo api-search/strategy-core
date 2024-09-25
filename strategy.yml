@@ -226,6 +226,25 @@
   policies:
     - github-repository
     - source-of-truth-actions
+- name: APIs Are Made Available Through a Platform Gateway
+  type: API
+  scope: API
+  description: >-
+    All APIs must be deployed through a common platform gateway established for the domain, line of business, or team, leveraging development, staging, and production environments, and a common set of policies for configuring access to digital resources and capabilities via APis.
+  solutions:
+    - Access
+    - Automation    
+    - Change
+    - Consistency
+    - Discovery
+    - Onboarding
+    - Quality
+    - Reliability
+    - Security
+    - Self-Service  
+  policies:
+    - gateway
+    - environments
 - name: APIs Are Always Aligned with Business
   type: API
   scope: API
@@ -358,6 +377,7 @@
     - apis-json-modified-info
     - road-map
     - change-log
+    - versioning
 - name: APIs Work Across Multiple Programming Languages
   type: API
   scope: Common
@@ -447,3 +467,17 @@
     - feedback
     - questions
 
+- name: API Contracts Are Validated
+  type: API
+  scope: Common
+  description: >-
+    All APIs must have a link to the evidence of the contract validation for business and technical contracts, allowing any stakeholder to review the details of the contract, as well as the rules applied to govern the details of contracts.
+  solutions:
+    - Alignment
+    - Communication
+    - Consistency
+    - Quality
+    - Reliability
+    - Self-Service  
+  policies:
+    - validator
