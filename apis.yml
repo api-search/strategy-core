@@ -2,7 +2,9 @@
 aid: api-evangelist-strategies
 specificationVersion: '0.19'
 
-type: Index
+type: Governance
+position: Producer
+access: Internal
 
 name: APIs.io Strategies
 description: This is the API contract for the APIs.io strategies, inventorying all of the strategies used across the platform.
